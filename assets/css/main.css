@@ -1241,3 +1241,43 @@ button:focus-visible {
       letter-spacing: 2px;
       font-weight: 700;
     }
+    /* Menyamakan proporsi tampilan & ukuran elemen di semua layar laptop */
+    @media (min-width: 992px) {
+      html {
+        /* Ukuran font dasar menyesuaikan lebar layar (minimal 16px, ideal 1.1vw, maksimal 19px) */
+        font-size: clamp(16px, 1.1vw, 19px);
+      }
+
+      .container {
+        /* Lebar kontainer mengikuti persentase layar (88% dari lebar laptop) agar tidak sempit di tengah */
+        max-width: 88% !important;
+      }
+
+      #hero h1 {
+        font-size: clamp(2.4rem, 3.6vw, 3.8rem) !important;
+      }
+
+      #hero p {
+        font-size: clamp(1rem, 1.2vw, 1.25rem) !important;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(1.8rem, 2.5vw, 2.6rem) !important;
+      }
+
+      .about-content p,
+      .menu-information h3,
+      .testi-quote {
+        font-size: clamp(0.95rem, 1.05vw, 1.15rem) !important;
+      }
+    }
+    /* Memperbesar ukuran font sub-judul kecil */
+    .section-heading span {
+      font-size: 16px !important;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    /* ---> TEMPEL KODE @media (min-width: 992px) DI SINI <--- */
+
+  </style>
