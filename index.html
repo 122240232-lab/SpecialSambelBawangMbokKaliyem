@@ -15,7 +15,7 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css"
         rel="stylesheet">
   <!-- CSS Website -->
-  <link href="assets/css/main.css?v=4" rel="stylesheet">
+  <link href="assets/css/main.css?v=6" rel="stylesheet">
   <style>
     .mbok-social-link {
       display: inline-flex;
@@ -82,6 +82,43 @@
       background-color: #ffd57e;
       color: #26110c;
     }
+    /* Paragraf Tentang Kami rata kanan-kiri */
+    .about-content p {
+      text-align: justify;
+    }
+    /* Teks ulasan testimoni tidak miring (italic) */
+    .testi-quote {
+      font-style: normal !important;
+    }
+    /* Memperbesar ukuran font sub-judul kecil */
+    .section-heading span {
+      font-size: 16px !important;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+    /* Menyamakan proporsi tampilan & ukuran elemen di semua layar laptop */
+    @media (min-width: 992px) {
+      html {
+        font-size: clamp(16px, 1.1vw, 19px);
+      }
+      .container {
+        max-width: 88% !important;
+      }
+      #hero h1 {
+        font-size: clamp(2.4rem, 3.6vw, 3.8rem) !important;
+      }
+      #hero p {
+        font-size: clamp(1rem, 1.2vw, 1.25rem) !important;
+      }
+      .section-heading h2 {
+        font-size: clamp(1.8rem, 2.5vw, 2.6rem) !important;
+      }
+      .about-content p,
+      .menu-information h3,
+      .testi-quote {
+        font-size: clamp(0.95rem, 1.05vw, 1.15rem) !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -94,9 +131,9 @@
             <img src="assets/img/LOGO.jpg" alt="Logo Mbok Kaliyem" class="brand-logo-img" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); display: block;">
           </div>
           <div class="brand-text-wrap" style="display: flex; flex-direction: column; line-height: 1.2;">
-         <span class="brand-small" style="font-size: 10px !important; letter-spacing: 1.5px;">SPESIAL SAMBAL BAWANG</span>
-         <span class="brand-name" style="font-size: 18px !important;">MBOK KALIYEM<span></span></span>
-       </div>
+            <span class="brand-small" style="font-size: 10px !important; letter-spacing: 1.5px;">SPESIAL SAMBAL BAWANG</span>
+            <span class="brand-name" style="font-size: 18px !important;">MBOK KALIYEM<span></span></span>
+          </div>
         </div>
         <button class="navbar-toggler"
                 type="button"
@@ -165,9 +202,9 @@
         </div>
         <div class="hero-caption">
           <div class="container">
-  <span class="hero-eyebrow" style="font-size: 24px !important; letter-spacing: 2.5px !important; font-weight: 700 !important;">
-  CITA RASA RUMAHAN SEJAK 2019
-</span>
+            <span class="hero-eyebrow" style="font-size: 24px !important; letter-spacing: 2.5px !important; font-weight: 700 !important;">
+              CITA RASA RUMAHAN SEJAK 2019
+            </span>
             <h1>
               Sambalnya Nendang,<br>
               Harganya Bersahabat<span></span>
@@ -304,8 +341,7 @@
         <noscript>
           <p>Aktifkan JavaScript untuk menampilkan daftar menu.</p>
         </noscript>
-        <p class="menu-note">
-        </p>
+        <p class="menu-note"></p>
       </div>
     </section>
 
@@ -348,7 +384,7 @@
               <!-- Tombol Utama WhatsApp -->
               <div class="mt-4">
                 <a href="https://wa.me/62818265808" target="_blank" class="btn w-100 text-white fw-semibold py-2" style="background-color: #3f6236; border-radius: 10px;">
-                  Pesan via WhatsApp 
+                  Pesan via WhatsApp
                 </a>
               </div>
             </div>
@@ -408,6 +444,9 @@
                   <option value="Nasi Telor Bakar + Tahu/Tempe">Nasi Telor Bakar + Tahu/Tempe</option>
                   <option value="Nasi Telor Goreng + Tahu/Tempe">Nasi Telor Goreng + Tahu/Tempe</option>
                   <option value="Nasi Tahu Tempe">Nasi Tahu Tempe</option>
+                  <option value="Air Es (Tanpa Es)">Air Es (Tanpa Es)</option>
+                  <option value="Teh (Es / Panas)">Teh (Es / Panas)</option>
+                  <option value="Jeruk (Es / Panas)">Jeruk (Es / Panas)</option>
                 </select>
               </div>
               <div class="col-12">
@@ -445,7 +484,7 @@
               SPESIAL SAMBAL BAWANG
             </span>
             <h2>MBOK KALIYEM</h2>
-            <p>
+            <p style="text-align: justify; padding-right: 24px;">
               Berdiri sejak tahun 2019 di Babarsari,
               Mbok Kaliyem menyajikan penyetan dengan
               sambal bawang khas, nasi ambil sepuasnya,
@@ -645,6 +684,24 @@
           name: "Nasi Tahu Tempe",
           price: 8000,
           photo: "tempe tahu.jpg"
+        },
+        {
+          name: "Air Es (Tanpa Es)",
+          price: 1000,
+          photo: "air es.jpg",
+          icon: "💧"
+        },
+        {
+          name: "Teh (Es / Panas)",
+          price: 3000,
+          photo: "es teh.jpg",
+          icon: "🧋"
+        },
+        {
+          name: "Jeruk (Es / Panas)",
+          price: 4000,
+          photo: "es jerukk.jpg",
+          icon: "🍊"
         }
       ];
 
@@ -673,6 +730,18 @@
         photo.src = "assets/img/" + menu.photo;
         photo.alt = menu.name;
         photo.loading = "lazy";
+        photo.onerror = function () {
+          photo.style.display = "none";
+          photoWrap.style.background = "linear-gradient(135deg, #fdf3e7 0%, #f5e2c8 100%)";
+          photoWrap.style.display = "flex";
+          photoWrap.style.flexDirection = "column";
+          photoWrap.style.alignItems = "center";
+          photoWrap.style.justifyContent = "center";
+          photoWrap.style.gap = "6px";
+          photoWrap.innerHTML =
+            '<span style="font-size: 46px;">' + (menu.icon || "🥤") + '</span>' +
+            '<span style="font-size: 12px; font-weight: 600; color: #7a4b2a; letter-spacing: 1px;">MINUMAN SEGAR</span>';
+        };
         photoWrap.append(photo);
 
         const information = document.createElement("div");
@@ -719,7 +788,6 @@
       function updateScrollSpy() {
         let currentId = "hero";
         const triggerOffset = 180;
-
         sectionIds.forEach(function (id) {
           const sec = document.getElementById(id);
           if (!sec) return;
@@ -727,12 +795,9 @@
             currentId = id;
           }
         });
-
-        // Jika scroll sudah mentok paling bawah halaman, aktifkan Testimoni
         if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 25) {
           currentId = "testimoni";
         }
-
         setActiveMenu(currentId);
       }
 
@@ -777,8 +842,12 @@
         currentMenu = (index + menus.length) % menus.length;
         const menu = menus[currentMenu];
         modalTitle.textContent = menu.name;
+        modalPhoto.style.display = "block";
         modalPhoto.src = "assets/img/" + menu.photo;
         modalPhoto.alt = menu.name;
+        modalPhoto.onerror = function () {
+          modalPhoto.style.display = "none";
+        };
         modalPrice.textContent = rupiah.format(menu.price);
         modalCount.textContent = (currentMenu + 1) + " dari " + menus.length + " menu";
       }
@@ -842,7 +911,6 @@
             }
           });
         });
-
         const carouselElement = document.getElementById("heroCarousel");
         if (carouselElement) {
           new bootstrap.Carousel(carouselElement, {
@@ -859,7 +927,7 @@
       // ====================================
       // TESTIMONI PELANGGAN
       // ====================================
-    const STORAGE_KEY = "mbokKaliyemTestis_v3";
+      const STORAGE_KEY = "mbokKaliyemTestis_v3";
       const defaultTestis = [
         {
           name: "Nanda Rizki",
