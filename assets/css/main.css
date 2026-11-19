@@ -81,60 +81,77 @@ button:focus-visible {
    HEADER
 ==================================== */
 
+/* ====================================
+   HEADER
+==================================== */
 #header {
   background: rgba(50, 27, 23, 0.5);
   backdrop-filter: blur(6px);
   transition: background 0.3s;
 }
-
 #header.scrolled {
   background: rgba(76, 28, 22, 0.97);
 }
-
 #header .navbar {
-  padding: 18px 0;
+  padding: 16px 0;
 }
-
 .mbok-brand {
   display: flex;
-  flex-direction: column;
-  margin-right: 25px;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-right: 15px;
+  cursor: default;
+  user-select: none;
 }
-
+.brand-logo-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 200, 87, 0.4);
+}
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  display: block;
+}
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
 .brand-small {
-  margin-bottom: 4px;
+  margin-bottom: 3px;
   color: var(--yellow);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2px;
 }
-
 .brand-name {
   color: #fff;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 800;
   line-height: 1.2;
 }
-
 .brand-name > span {
   color: var(--yellow);
 }
-
 #header .navbar-nav {
-  gap: 20px;
+  gap: 16px;
 }
-
 #header .nav-link {
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
 }
-
 #header .nav-link:hover,
 #header .nav-link.active {
   color: var(--yellow);
 }
-
 /* ====================================
    HOME
 ==================================== */
