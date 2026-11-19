@@ -15,7 +15,7 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css"
         rel="stylesheet">
   <!-- CSS Website -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css?v=3" rel="stylesheet">
   <style>
     .mbok-social-link {
       display: inline-flex;
@@ -36,19 +36,32 @@
       width: 92%;
       margin: auto;
     }
+    /* Pengunci warna menu navigasi agar kuning saat aktif/hover & tidak turun baris */
+    #header .navbar-nav {
+      gap: 16px;
+    }
+    #header .navbar-nav .nav-link {
+      color: #ffffff !important;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+    #header .navbar-nav .nav-link:hover,
+    #header .navbar-nav .nav-link:focus,
+    #header .navbar-nav .nav-link.active {
+      color: #ffc857 !important;
+    }
   </style>
 </head>
 <body>
   <!-- HEADER -->
- <!-- HEADER -->
   <header id="header" class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <div class="navbar-brand mbok-brand">
-          <div class="brand-logo-wrap">
-            <img src="assets/img/LOGO.jpg" alt="Logo Mbok Kaliyem" class="brand-logo-img">
+        <div class="navbar-brand mbok-brand" style="display: flex; flex-direction: row; align-items: center; gap: 12px; cursor: default; user-select: none;">
+          <div class="brand-logo-wrap" style="width: 48px; height: 48px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid rgba(255, 200, 87, 0.4);">
+            <img src="assets/img/LOGO.jpg" alt="Logo Mbok Kaliyem" class="brand-logo-img" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); display: block;">
           </div>
-          <div class="brand-text-wrap">
+          <div class="brand-text-wrap" style="display: flex; flex-direction: column;">
             <span class="brand-small">SPESIAL SAMBAL BAWANG</span>
             <span class="brand-name">MBOK KALIYEM<span></span></span>
           </div>
@@ -84,6 +97,8 @@
       </div>
     </nav>
   </header>
+
+  <main>
     <!-- HOME -->
     <section id="hero">
       <div id="heroCarousel"
@@ -123,7 +138,7 @@
             </span>
             <h1>
               Sambalnya Nendang,<br>
-              Harganya Bersahabat<span>.</span>
+              Harganya Bersahabat<span></span>
             </h1>
             <p>
               Nikmati penyetan pilihan dengan sambal bawang khas
@@ -158,6 +173,7 @@
         </div>
       </div>
     </section>
+
     <!-- KEUNGGULAN -->
     <section class="highlights-section" aria-label="Ciri khas Mbok Kaliyem">
       <div class="container">
@@ -192,6 +208,7 @@
         </div>
       </div>
     </section>
+
     <!-- TENTANG KAMI -->
     <section id="about" class="section-space">
       <div class="container">
@@ -240,6 +257,7 @@
         </div>
       </div>
     </section>
+
     <!-- MENU -->
     <section id="menu" class="section-space section-cream">
       <div class="container">
@@ -264,8 +282,8 @@
         </p>
       </div>
     </section>
+
     <!-- LOKASI DAN KONTAK -->
-  <!-- LOKASI DAN KONTAK -->
     <section id="contact" class="section-space section-cream">
       <div class="container">
         <div class="section-heading">
@@ -273,26 +291,21 @@
           <h2>Mampir & Pesan Sekarang</h2>
           <p>Kunjungi warung kami di Babarsari dan Gejayan, atau hubungi langsung untuk pesan antar.</p>
         </div>
-
         <div class="row g-4 align-items-stretch">
           <!-- SEBELAH KIRI: KARTU KONTAK & CABANG -->
           <div class="col-lg-5">
             <div class="p-4 bg-white rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between" style="border: 1px solid #dfd1be;">
               <div>
                 <h4 class="fw-bold mb-3" style="color: #502513;">Warung & Pemesanan</h4>
-
                 <div class="mb-3">
                   <small class="text-uppercase fw-bold text-muted d-block mb-1">Cabang Babarsari</small>
                   <p class="small text-muted mb-0">Ruko Babarsari No. 43, Kledokan, Caturtunggal, Depok, Sleman, DIY 55281</p>
                 </div>
-
                 <div class="mb-3">
                   <small class="text-uppercase fw-bold text-muted d-block mb-1">Cabang Gejayan</small>
                   <p class="small text-muted mb-0">Kawasan Gejayan, Yogyakarta</p>
                 </div>
-
                 <hr style="border-color: #dfd1be; margin: 14px 0;">
-
                 <div class="d-flex justify-content-between small mb-2">
                   <span class="text-muted fw-semibold">Jam Buka</span>
                   <span class="fw-bold" style="color: #502513;">10.00 – 21.00 WIB</span>
@@ -303,20 +316,17 @@
                 </div>
                 <div class="d-flex justify-content-between small">
                   <span class="text-muted fw-semibold">Pesan Online</span>
-                  <!-- Ganti tanda # pada href dengan link GrabFood asli yang ada di footer kamu -->
-                 <a href="https://app.grab.com/s/2EJb2bfK" target="_blank" class="fw-bold text-decoration-none" style="color: #00b14f;">Pesan via GrabFood &rarr;</a>
+                  <a href="https://app.grab.com/s/2EJb2bfK" target="_blank" class="fw-bold text-decoration-none" style="color: #00b14f;">Pesan via GrabFood &rarr;</a>
                 </div>
               </div>
-
               <!-- Tombol Utama WhatsApp -->
               <div class="mt-4">
                 <a href="https://wa.me/62818265808" target="_blank" class="btn w-100 text-white fw-semibold py-2" style="background-color: #3f6236; border-radius: 10px;">
-                  Pesan via WhatsApp (+62 818-265-808)
+                  Pesan via WhatsApp 
                 </a>
               </div>
             </div>
           </div>
-
           <!-- SEBELAH KANAN: GOOGLE MAPS -->
           <div class="col-lg-7">
             <div class="rounded-4 overflow-hidden shadow-sm h-100" style="min-height: 350px; border: 1px solid #dfd1be;">
@@ -334,6 +344,7 @@
         </div>
       </div>
     </section>
+
     <!-- TESTIMONI PELANGGAN -->
     <section id="testimoni" class="section-space">
       <div class="container">
@@ -341,14 +352,12 @@
           <span>KATA PELANGGAN</span>
           <h2>Cerita Mereka yang Sudah Mampir</h2>
         </div>
-
         <!-- Daftar Kartu Testimoni (Diisi JavaScript) -->
         <div class="testi-slider-wrap">
-  <button type="button" id="testiPrev" class="testi-nav-btn" aria-label="Sebelumnya">&#10094;</button>
-  <div id="testiList" class="testi-track"></div>
-  <button type="button" id="testiNext" class="testi-nav-btn" aria-label="Berikutnya">&#10095;</button>
-</div>
-
+          <button type="button" id="testiPrev" class="testi-nav-btn" aria-label="Sebelumnya">&#10094;</button>
+          <div id="testiList" class="testi-track"></div>
+          <button type="button" id="testiNext" class="testi-nav-btn" aria-label="Berikutnya">&#10095;</button>
+        </div>
         <!-- Form Kirim Testimoni -->
         <div class="testi-form-box">
           <h3>Bagikan Pengalaman Makanmu</h3>
@@ -398,6 +407,7 @@
       </div>
     </section>
   </main>
+
   <!-- FOOTER MBOK KALIYEM -->
   <footer id="footer" class="mbok-footer">
     <div class="mbok-footer-top">
@@ -420,21 +430,11 @@
           <div class="col-lg-2 col-md-6">
             <h3>JELAJAHI</h3>
             <ul class="mbok-footer-links">
-              <li>
-                <a href="#hero">Beranda</a>
-              </li>
-              <li>
-                <a href="#about">Tentang Kami</a>
-              </li>
-              <li>
-                <a href="#menu">Menu Kami</a>
-              </li>
-               <li>
-                <a href="#contact">Lokasi & Kontak</a>
-              </li>
-                           <li>
-                <a href="#testimoni">Testimoni</a>
-              </li>
+              <li><a href="#hero">Beranda</a></li>
+              <li><a href="#about">Tentang Kami</a></li>
+              <li><a href="#menu">Menu Kami</a></li>
+              <li><a href="#contact">Lokasi & Kontak</a></li>
+              <li><a href="#testimoni">Testimoni</a></li>
             </ul>
           </div>
           <!-- Lokasi -->
@@ -446,7 +446,6 @@
             </div>
             <div class="mbok-footer-detail">
               <strong>JAM BUKA</strong>
-              <!-- Ganti dengan jam buka sebenarnya -->
               <p>10.00 - 21.00</p>
             </div>
           </div>
@@ -519,6 +518,7 @@
       </div>
     </div>
   </footer>
+
   <!-- FOTO MENU BESAR -->
   <div class="modal fade"
        id="menuModal"
@@ -560,6 +560,7 @@
       </div>
     </div>
   </div>
+
   <!-- BOOTSTRAP -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- JAVASCRIPT WEBSITE -->
@@ -648,8 +649,6 @@
         photo.src = "assets/img/" + menu.photo;
         photo.alt = menu.name;
         photo.loading = "lazy";
-
-       
         photoWrap.append(photo);
 
         const information = document.createElement("div");
@@ -675,33 +674,55 @@
       window.addEventListener("scroll", updateHeader, { passive: true });
       updateHeader();
 
-      // Menu navigasi aktif
+      // Menu navigasi aktif saat di-scroll (Scrollspy) & saat diklik
       const links = document.querySelectorAll("#navbarMbok .nav-link");
-      if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (!entry.isIntersecting) return;
-              links.forEach(function (link) {
-                const active =
-                  link.getAttribute("href") === "#" + entry.target.id;
-                link.classList.toggle("active", active);
-                if (active) {
-                  link.setAttribute("aria-current", "location");
-                } else {
-                  link.removeAttribute("aria-current");
-                }
-              });
-            });
-          },
-          { rootMargin: "-15% 0px -60% 0px", threshold: 0 }
-        );
-        document.querySelectorAll("main > section[id]").forEach(function (section) {
-          observer.observe(section);
+      const sectionIds = ["hero", "about", "menu", "contact", "testimoni"];
+
+      function setActiveMenu(id) {
+        links.forEach(function (link) {
+          const isMatch = link.getAttribute("href") === "#" + id;
+          link.classList.toggle("active", isMatch);
+          if (isMatch) {
+            link.setAttribute("aria-current", "location");
+            link.style.setProperty("color", "#ffc857", "important");
+          } else {
+            link.removeAttribute("aria-current");
+            link.style.setProperty("color", "#ffffff", "important");
+          }
         });
       }
 
-      // Galeri foto menu besar (Mandiri tanpa bergantung Bootstrap JS)
+      function updateScrollSpy() {
+        let currentId = "hero";
+        const triggerOffset = 180;
+
+        sectionIds.forEach(function (id) {
+          const sec = document.getElementById(id);
+          if (!sec) return;
+          if (sec.getBoundingClientRect().top <= triggerOffset) {
+            currentId = id;
+          }
+        });
+
+        // Jika scroll sudah mentok paling bawah halaman, aktifkan Testimoni
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 25) {
+          currentId = "testimoni";
+        }
+
+        setActiveMenu(currentId);
+      }
+
+      links.forEach(function (clickedLink) {
+        clickedLink.addEventListener("click", function () {
+          const targetId = clickedLink.getAttribute("href").replace("#", "");
+          setActiveMenu(targetId);
+        });
+      });
+
+      window.addEventListener("scroll", updateScrollSpy, { passive: true });
+      updateScrollSpy();
+
+      // Galeri foto menu besar
       const modalElement = document.getElementById("menuModal");
       const modalTitle = document.getElementById("menuModalTitle");
       const modalPhoto = document.getElementById("menuModalPhoto");
@@ -718,8 +739,7 @@
         modalPhoto.src = "assets/img/" + menu.photo;
         modalPhoto.alt = menu.name;
         modalPrice.textContent = rupiah.format(menu.price);
-        modalCount.textContent =
-          (currentMenu + 1) + " dari " + menus.length + " menu";
+        modalCount.textContent = (currentMenu + 1) + " dari " + menus.length + " menu";
       }
 
       function openModal() {
@@ -754,18 +774,13 @@
       });
 
       closeModalBtn.addEventListener("click", closeModal);
-
       modalElement.addEventListener("click", function (event) {
-        if (event.target === modalElement) {
-          closeModal();
-        }
+        if (event.target === modalElement) closeModal();
       });
 
       document.addEventListener("keydown", function (event) {
         if (!modalElement.classList.contains("is-open")) return;
-        if (event.key === "Escape") {
-          closeModal();
-        }
+        if (event.key === "Escape") closeModal();
         if (event.key === "ArrowRight") {
           event.preventDefault();
           showMenu(currentMenu + 1);
@@ -799,12 +814,11 @@
           });
         }
       }
-    });
-        // ====================================
+
+      // ====================================
       // TESTIMONI PELANGGAN
       // ====================================
       const STORAGE_KEY = "mbokKaliyemTestis_v2";
-
       const defaultTestis = [
         {
           name: "Nanda Rizki",
@@ -829,9 +843,7 @@
       let testimonials = defaultTestis;
       try {
         const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          testimonials = JSON.parse(saved);
-        }
+        if (saved) testimonials = JSON.parse(saved);
       } catch (error) {
         console.warn("LocalStorage tidak tersedia:", error);
       }
@@ -843,7 +855,7 @@
         testiList.innerHTML = "";
         testimonials.forEach(function (item) {
           const col = document.createElement("div");
-        col.className = "testi-slide";
+          col.className = "testi-slide";
 
           const card = document.createElement("div");
           card.className = "testi-card";
@@ -856,19 +868,16 @@
           const quote = document.createElement("p");
           quote.className = "testi-quote";
           quote.textContent = '"' + item.message + '"';
-
           topPart.append(stars, quote);
 
           const author = document.createElement("div");
           author.className = "testi-author";
-
           const authorName = document.createElement("strong");
           authorName.textContent = item.name;
-
           const authorMenu = document.createElement("span");
           authorMenu.textContent = "Menu favorit: " + item.menu;
-
           author.append(authorName, authorMenu);
+
           card.append(topPart, author);
           col.appendChild(card);
           testiList.appendChild(col);
@@ -876,12 +885,14 @@
       }
 
       renderTestimonials();
-document.getElementById("testiPrev").addEventListener("click", function () {
-  testiList.scrollBy({ left: -360, behavior: "smooth" });
-});
-document.getElementById("testiNext").addEventListener("click", function () {
-  testiList.scrollBy({ left: 360, behavior: "smooth" });
-});
+
+      document.getElementById("testiPrev").addEventListener("click", function () {
+        testiList.scrollBy({ left: -360, behavior: "smooth" });
+      });
+      document.getElementById("testiNext").addEventListener("click", function () {
+        testiList.scrollBy({ left: 360, behavior: "smooth" });
+      });
+
       testiForm.addEventListener("submit", function (event) {
         event.preventDefault();
         const newTesti = {
@@ -890,18 +901,17 @@ document.getElementById("testiNext").addEventListener("click", function () {
           rating: Number(document.getElementById("testiRating").value),
           message: document.getElementById("testiMessage").value.trim()
         };
-
         testimonials.unshift(newTesti);
         try {
           localStorage.setItem(STORAGE_KEY, JSON.stringify(testimonials));
         } catch (error) {
           console.warn("Gagal menyimpan testimoni:", error);
         }
-
         renderTestimonials();
         testiForm.reset();
         testiList.scrollIntoView({ behavior: "smooth", block: "nearest" });
       });
+    });
   </script>
 </body>
 </html>
