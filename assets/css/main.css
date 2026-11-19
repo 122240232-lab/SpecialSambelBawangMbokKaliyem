@@ -1227,3 +1227,17 @@ button:focus-visible {
     #header .navbar-nav .nav-link.active {
       color: #ffc857 !important;
     }
+    /* Paragraf Tentang Kami rata kanan-kiri */
+    .about-content p {
+      text-align: justify;
+    }
+    /* Teks ulasan testimoni tidak miring (italic) */
+    .testi-quote {
+      font-style: normal !important;
+    }
+    /* Memperbesar ukuran font sub-judul kecil (CERITA KAMI, MENU MBOK KALIYEM, LOKASI & KONTAK, TESTIMONI) */
+    .section-heading span {
+      font-size: 16px !important;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
