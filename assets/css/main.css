@@ -1,0 +1,1189 @@
+/* ====================================
+   MBOK KALIYEM
+==================================== */
+
+:root {
+  --red: #a52b23;
+  --red-dark: #7c211b;
+  --green: #426b39;
+  --yellow: #ffc857;
+  --cream: #fff8ee;
+  --text: #352720;
+  --muted: #74685e;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+.section-space {
+  padding: 85px 0;
+}
+
+.section-cream {
+  background: var(--cream);
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading > span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+/* ====================================
+   HEADER
+==================================== */
+
+#header {
+  background: rgba(50, 27, 23, 0.5);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s;
+}
+
+#header.scrolled {
+  background: rgba(76, 28, 22, 0.97);
+}
+
+#header .navbar {
+  padding: 18px 0;
+}
+
+.mbok-brand {
+  display: flex;
+  flex-direction: column;
+  margin-right: 25px;
+}
+
+.brand-small {
+  margin-bottom: 4px;
+  color: var(--yellow);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.brand-name {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.brand-name > span {
+  color: var(--yellow);
+}
+
+#header .navbar-nav {
+  gap: 20px;
+}
+
+#header .nav-link {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#header .nav-link:hover,
+#header .nav-link.active {
+  color: var(--yellow);
+}
+
+/* ====================================
+   HOME
+==================================== */
+
+#hero {
+  height: 100vh;
+  height: 100svh;
+  min-height: 680px;
+  background: #2c1a14;
+}
+
+#heroCarousel,
+#heroCarousel .carousel-inner,
+#heroCarousel .carousel-item {
+  height: 100%;
+}
+
+#heroCarousel {
+  position: relative;
+  isolation: isolate;
+}
+
+#heroCarousel .carousel-item {
+  position: relative;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Lebih gelap di sisi teks */
+#heroCarousel .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(32, 15, 10, 0.86),
+    rgba(32, 15, 10, 0.48)
+  );
+}
+
+.hero-caption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--yellow);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero-caption h1 {
+  max-width: 900px;
+  margin: 0 0 24px;
+  color: #fff;
+  font-size: clamp(36px, 4.6vw, 68px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-caption h1 > span {
+  color: var(--yellow);
+}
+
+.hero-caption p {
+  max-width: 620px;
+  margin: 0 0 28px;
+  color: #fff1e4;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.hero-caption .mbok-button {
+  background: var(--yellow);
+  color: var(--text);
+  pointer-events: auto;
+}
+
+.hero-caption .mbok-button:hover {
+  background: #f0b93e;
+}
+
+/* Pilihan slide */
+#heroCarousel .hero-indicators {
+  bottom: 25px;
+  z-index: 4;
+  justify-content: center;
+  gap: 35px;
+  margin: 0;
+  padding: 0 20px;
+}
+
+#heroCarousel .hero-indicators button {
+  position: relative;
+  flex: 0 1 auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 15px 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  text-indent: 0;
+  opacity: 0.6;
+}
+
+#heroCarousel .hero-indicators button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 42px;
+  height: 4px;
+  border-radius: 5px;
+  background: transparent;
+  transform: translateX(-50%);
+}
+
+#heroCarousel .hero-indicators button.active,
+#heroCarousel .hero-indicators button:hover {
+  opacity: 1;
+}
+
+#heroCarousel .hero-indicators button.active::after {
+  background: var(--yellow);
+}
+
+.hero-pause {
+  position: absolute;
+  right: 20px;
+  bottom: 105px;
+  z-index: 4;
+  padding: 7px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 12px;
+}
+
+/* ====================================
+   CIRI KHAS
+==================================== */
+
+.highlights-section {
+  padding: 35px 0;
+  background: var(--green);
+  color: #fff;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.highlight-item > span {
+  color: var(--yellow);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.highlight-item h2 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.highlight-item p {
+  margin: 0;
+  color: #e9f0e4;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ====================================
+   TENTANG KAMI
+==================================== */
+
+.about-image-wrap {
+  position: relative;
+  padding: 0 20px 20px 0;
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  height: 530px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.about-year {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 28px;
+  border: 6px solid #fff;
+  border-radius: 12px;
+  background: var(--red);
+  color: #fff;
+  font-size: 14px;
+}
+
+.about-year strong {
+  color: var(--yellow);
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+.about-content p {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.mbok-button {
+  display: inline-block;
+  padding: 13px 25px;
+  border-radius: 7px;
+  background: var(--red);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.mbok-button:hover {
+  background: var(--red-dark);
+  color: #fff;
+}
+
+/* ====================================
+   MENU
+==================================== */
+
+.menu-heading-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.menu-heading-row .section-heading {
+  margin-bottom: 0;
+}
+
+.menu-heading-row > p {
+  max-width: 320px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.mbok-menu-card {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #ecdfce;
+  border-radius: 13px;
+  background: #fff;
+  color: var(--text);
+  text-align: left;
+  cursor: zoom-in;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.mbok-menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(80, 37, 19, 0.1);
+}
+
+.menu-photo-wrap {
+  position: relative;
+  overflow: hidden;
+  background: #eee5d8;
+}
+
+.menu-photo-wrap img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.mbok-menu-card:hover img {
+  transform: scale(1.05);
+}
+
+.menu-zoom {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 25px;
+}
+
+.menu-information {
+  padding: 22px;
+}
+
+.menu-information h3 {
+  min-height: 54px;
+  margin: 0 0 15px;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.menu-information p {
+  margin: 0;
+  color: var(--red);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.menu-note {
+  margin: 25px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ====================================
+   FOTO MENU BESAR
+==================================== */
+
+#menuModal .modal-dialog {
+  max-width: 850px;
+}
+
+.menu-modal-content {
+  overflow: hidden;
+  border: 0;
+  border-radius: 12px;
+}
+
+#menuModal .modal-header {
+  padding: 18px 22px;
+  background: var(--cream);
+}
+
+#menuModalTitle {
+  padding-right: 15px;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+#menuModal .modal-body {
+  padding: 0;
+}
+
+.menu-modal-photo {
+  position: relative;
+  background: #191512;
+}
+
+#menuModalPhoto {
+  display: block;
+  width: 100%;
+  height: 55vh;
+  max-height: 550px;
+  object-fit: contain;
+}
+
+.menu-modal-arrow {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 23px;
+  transform: translateY(-50%);
+}
+
+.menu-modal-arrow:hover {
+  background: var(--red);
+}
+
+.menu-modal-previous {
+  left: 12px;
+}
+
+.menu-modal-next {
+  right: 12px;
+}
+
+.menu-modal-info {
+  padding: 20px 24px;
+}
+
+#menuModalPrice {
+  margin: 0 0 8px;
+  color: var(--red);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+#menuModalCount {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ====================================
+   GALERI
+==================================== */
+
+.gallery-card {
+  margin: 0;
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.gallery-card figcaption {
+  padding-top: 15px;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ====================================
+   KONTAK
+==================================== */
+
+.contact-card {
+  height: 100%;
+  padding: 30px;
+  border: 1px solid #ecdfce;
+  border-top: 4px solid var(--green);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.contact-label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.contact-card h3 {
+  margin-bottom: 14px;
+  color: var(--text);
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.contact-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.contact-card small {
+  color: #8e8175;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ====================================
+   FOOTER
+==================================== */
+
+#footer {
+  color: #fff;
+}
+
+.footer-top {
+  padding: 55px 0;
+  background: #385c31;
+}
+
+.footer-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--yellow);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.footer-top h2 {
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.footer-top h3 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-top p {
+  max-width: 450px;
+  margin-bottom: 0;
+  color: #e9f0e4;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: #e9f0e4;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: var(--yellow);
+}
+
+.footer-bottom {
+  padding: 23px 0;
+  background: #22391e;
+}
+
+.footer-bottom p {
+  margin: 0 0 7px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.footer-bottom small,
+.footer-bottom a {
+  color: #cedcc8;
+  font-size: 11px;
+}
+
+/* ====================================
+   RESPONSIF
+==================================== */
+
+@media (max-width: 1199px) {
+  #header .navbar-collapse {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 9px;
+    background: rgba(76, 28, 22, 0.98);
+  }
+
+  #header .navbar-nav {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 991px) {
+  .about-photo {
+    height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 90px;
+  }
+
+  .section-space {
+    padding: 60px 0;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .brand-small {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  #header .navbar {
+    padding: 16px 0;
+  }
+
+  .hero-caption p {
+    font-size: 15px;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  #heroCarousel .hero-indicators {
+    gap: 22px;
+    padding: 0 15px;
+  }
+
+  #heroCarousel .hero-indicators button {
+    font-size: 12px;
+  }
+
+  .menu-heading-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .menu-heading-row > p {
+    max-width: none;
+  }
+
+  .menu-information h3 {
+    min-height: 0;
+  }
+
+  .about-photo {
+    height: 350px;
+  }
+
+  .gallery-card img {
+    height: 260px;
+  }
+
+  #menuModalPhoto {
+    height: 45vh;
+  }
+
+  .footer-top {
+    padding: 40px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+/* ====================================
+   PETA LOKASI MBOK KALIYEM
+==================================== */
+
+.mbok-location-intro {
+  max-width: 700px;
+  margin: -12px 0 28px;
+  color: var(--muted, #74685e);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.mbok-location-map {
+  overflow: hidden;
+  border: 1px solid #e5dccf;
+  border-radius: 12px;
+  background: #eee;
+}
+
+.mbok-location-map iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+}
+
+/* ====================================
+   FOOTER EMPAT KOLOM
+==================================== */
+
+.mbok-footer {
+  color: #fff;
+}
+
+.mbok-footer-top {
+  padding: 65px 0;
+  background: var(--green, #426b39);
+}
+
+.mbok-footer-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--yellow, #ffc857);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.mbok-footer h2 {
+  margin: 0 0 24px;
+  color: #fff;
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.mbok-footer h3 {
+  margin: 0 0 30px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.mbok-footer-top p {
+  margin: 0;
+  color: #edf3e8;
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.mbok-footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mbok-footer-links li {
+  margin-bottom: 14px;
+}
+
+.mbok-footer-links a {
+  color: #edf3e8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.mbok-footer-links a:hover {
+  color: var(--yellow, #ffc857);
+}
+
+.mbok-footer-detail {
+  margin-bottom: 26px;
+}
+
+.mbok-footer-detail:last-child {
+  margin-bottom: 0;
+}
+
+.mbok-footer-detail strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.mbok-footer-detail a {
+  color: var(--yellow, #ffc857);
+  overflow-wrap: anywhere;
+}
+
+.mbok-footer-detail a:hover {
+  color: #fff;
+}
+
+/* Hak cipta */
+.mbok-footer-bottom {
+  padding: 25px 0;
+  background: #22391e;
+}
+
+.mbok-footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.mbok-footer-bottom p {
+  margin: 0;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.mbok-footer-bottom p span {
+  color: var(--yellow, #ffc857);
+  font-weight: 600;
+}
+
+.mbok-footer-bottom small {
+  display: block;
+  margin-top: 13px;
+  color: #d4dfce;
+  font-size: 11px;
+}
+
+.mbok-footer-bottom small a {
+  color: var(--yellow, #ffc857);
+}
+
+.mbok-footer .mbok-back-top {
+  display: grid;
+  place-items: center;
+  flex: 0 0 46px;
+  height: 46px;
+  border-radius: 6px;
+  background: var(--yellow, #ffc857);
+  color: #352720;
+  font-size: 28px;
+}
+
+.mbok-footer .mbok-back-top:hover {
+  background: #f1b83e;
+}
+
+/* Tampilan HP */
+@media (max-width: 767px) {
+  .mbok-location-map iframe {
+    height: 320px;
+  }
+
+  .mbok-footer-top {
+    padding: 45px 0;
+  }
+
+  .mbok-footer h3 {
+    margin-bottom: 20px;
+  }
+
+  .mbok-footer-bottom-row {
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+.menu-zoom {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 25px;
+}
+/* ====================================
+       TESTIMONI & FORM PELANGGAN
+    ==================================== */
+    .testi-card {
+      height: 100%;
+      padding: 28px;
+      border: 1px solid #ecdfce;
+      border-top: 4px solid var(--yellow);
+      border-radius: 13px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(80, 37, 19, 0.04);
+    }
+    .testi-stars {
+      color: #f59e0b;
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .testi-quote {
+      margin: 0 0 20px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.85;
+      font-style: italic;
+    }
+    .testi-author strong {
+      display: block;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .testi-author span {
+      display: inline-block;
+      margin-top: 3px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .testi-form-box {
+      max-width: 720px;
+      margin: 50px auto 0;
+      padding: 35px;
+      border: 1px solid #ecdfce;
+      border-radius: 16px;
+      background: var(--cream);
+    }
+    .testi-form-box h3 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .testi-form-box > p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .testi-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .testi-input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #dfd1be;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .testi-input:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+    .testi-submit-btn {
+      border: 0;
+      cursor: pointer;
+    }
+    @media (max-width: 767px) {
+      .testi-form-box {
+        padding: 24px;
+      }
+    }
+    /* ====================================
+       SLIDER TESTIMONI 1 BARIS
+    ==================================== */
+    .testi-slider-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testi-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      padding: 10px 4px 16px;
+      width: 100%;
+      scrollbar-width: thin;
+      scrollbar-color: #dfd1be transparent;
+    }
+    .testi-track::-webkit-scrollbar {
+      height: 6px;
+    }
+    .testi-track::-webkit-scrollbar-thumb {
+      background: #dfd1be;
+      border-radius: 10px;
+    }
+    .testi-slide {
+      flex: 0 0 calc((100% - 48px) / 3); /* Menampilkan 3 kartu sejajar di layar lebar */
+      scroll-snap-align: start;
+      min-width: 280px;
+    }
+    .testi-nav-btn {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      border: 1px solid #dfd1be;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(80, 37, 19, 0.08);
+      transition: all 0.2s ease;
+    }
+    .testi-nav-btn:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+    @media (max-width: 991px) {
+      .testi-slide {
+        flex: 0 0 calc((100% - 24px) / 2); /* 2 kartu di tablet */
+      }
+    }
+    @media (max-width: 767px) {
+      .testi-slide {
+        flex: 0 0 88%; /* 1 kartu penuh + intip kartu sebelahnya di HP */
+      }
+      .testi-nav-btn {
+        display: none; /* Di HP cukup digeser pakai jari */
+      }
+    }
+    /* Merapatkan jarak antar section dengan latar belakang sama */
+    #menu.section-space {
+      padding-bottom: 40px;
+    }
+    #contact.section-space {
+      padding-top: 40px;
+    }
